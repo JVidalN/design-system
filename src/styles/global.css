@@ -1,0 +1,110 @@
+@import "primeflex.css";
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer base {
+  @font-face {
+    font-family: MarkPro;
+    src: url("./fonts/MarkPro.otf");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: MarkProBold;
+    src: url("./fonts/MarkPro-Bold.otf");
+    font-weight: 700;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: MarkProBook;
+    src: url("./fonts/MarkPro-Book.otf");
+    font-weight: 450;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: MarkProHeavyItalic;
+    src: url("./fonts/MarkPro-HeavyItalic.otf");
+    font-weight: 800;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: MarkProItalic;
+    src: url("./fonts/MarkPro-Italic.otf");
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: MarkProMedium;
+    src: url("./fonts/MarkPro-Medium.otf");
+    font-weight: 500;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: Roboto;
+    src: url("./fonts/Roboto-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: RobotoBlack;
+    src: url("./fonts/Roboto-Black.ttf");
+  }
+
+  @font-face {
+    font-family: RobotoBlackItalic;
+    src: url("./fonts/Roboto-BlackItalic.ttf");
+  }
+
+  @font-face {
+    font-family: RobotoBold;
+    src: url("./fonts/Roboto-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: RobotoBoldItalic;
+    src: url("./fonts/Roboto-BoldItalic.ttf");
+  }
+
+  @font-face {
+    font-family: RobotoItalic;
+    src: url("./fonts/Roboto-Italic.ttf");
+  }
+
+  @font-face {
+    font-family: Light;
+    src: url("./fonts/Roboto-Light.ttf");
+  }
+
+  @font-face {
+    font-family: RobotoLightItalic;
+    src: url("./fonts/Roboto-LightItalic.ttf");
+  }
+
+  @font-face {
+    font-family: RobotoMedium;
+    src: url("./fonts/Roboto-Medium.ttf");
+  }
+
+  @font-face {
+    font-family: RobotoMediumItalic;
+    src: url("./fonts/Roboto-MediumItalic.ttf");
+  }
+
+  @font-face {
+    font-family: RobotoThin;
+    src: url("./fonts/Roboto-Thin.ttf");
+  }
+
+  @font-face {
+    font-family: RobotoThinItalic;
+    src: url("./fonts/Roboto-ThinItalic.ttf");
+  }
+}

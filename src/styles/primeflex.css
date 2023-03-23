@@ -1,0 +1,315 @@
+/* hacks da css do primefex */
+.p-grid {
+  margin: 0 !important;
+}
+
+.p-component {
+  font-family: var(--rcb-font-family) !important;
+  font-size: var(--rcb-font-size-default) !important;
+  font-weight: normal !important;
+}
+
+.p-inputtext {
+  display: flex;
+  align-items: center;
+
+  font-family: var(--rcb-font-family) !important;
+  font-size: var(--rcb-font-size-default) !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+
+  line-height: 21px !important;
+  letter-spacing: 0.015em !important;
+
+  color: var(--rcb-grey-dark) !important;
+  background: var(--rcb-background-secondary) !important;
+  height: 40px !important;
+  padding: 0.5rem 0.5rem !important;
+
+  border: 0.8px solid var(--rcb-grey-light) !important;
+  box-sizing: border-box !important;
+  box-shadow: inset 0px 1px 1px rgba(2, 105, 172, 0.24) !important;
+  border-radius: 6px !important;
+
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.p-multiselect {
+  display: flex;
+  align-items: center;
+
+  font-family: var(--rcb-font-family) !important;
+  font-size: var(--rcb-font-size-default) !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+
+  line-height: 21px !important;
+  letter-spacing: 0.015em !important;
+
+  color: var(--rcb-grey-dark) !important;
+  background: var(--rcb-background-secondary) !important;
+  height: 40px !important;
+
+  border: 0.8px solid var(--rcb-grey-light) !important;
+  box-sizing: border-box !important;
+  box-shadow: inset 0px 1px 1px rgba(2, 105, 172, 0.24) !important;
+  border-radius: 6px !important;
+}
+
+.p-multiselect-token {
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.5rem;
+  background: rgba(0, 119, 179, 0.15) !important;
+  color: var(--rcb-blue-primary) !important;
+  border-radius: 12px !important;
+}
+
+.p-dropdown {
+  border: 0.8px solid var(--rcb-grey-light) !important;
+  box-sizing: border-box !important;
+  box-shadow: inset 0px 1px 1px rgba(2, 105, 172, 0.24) !important;
+  border-radius: 6px !important;
+  height: 40px !important;
+}
+
+.p-dropdown > .p-inputtext {
+  border: none !important;
+  box-sizing: none !important;
+  box-shadow: none !important;
+  border-radius: none !important;
+  border-radius: none !important;
+  background: none !important;
+}
+
+.p-button {
+  font-family: var(--rcb-font-family) !important;
+  font-size: var(--rcb-font-size-button) !important;
+  height: 48px !important;
+  border-radius: 12px !important;
+  letter-spacing: 0.015em !important;
+}
+
+.p-button:disabled {
+  cursor: default;
+  background-color: #cccccc !important;
+  color: #191b1d !important;
+  border-color: #cccccc !important;
+}
+
+.p-button-loading:disabled {
+  cursor: default;
+}
+
+.p-button.p-button-link {
+  padding: 0 !important;
+  font-family: var(--rcb-font-family) !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: var(--rcb-font-size-default) !important;
+  line-height: 21px !important;
+  letter-spacing: 0.015em !important;
+
+  color: var(--rcb-blue-primary) !important;
+  background: transparent !important;
+  border: transparent !important;
+}
+
+.p-button.p-button-link:enabled:hover {
+  background: transparent !important;
+  color: var(--rcb-blue) !important;
+  border-color: transparent !important;
+}
+
+.p-button-label {
+  transition: none !important;
+}
+
+.p-field > small {
+  margin: 0.25rem !important;
+}
+
+.p-field > small:empty {
+  display: none !important;
+}
+
+.p-password-panel {
+  margin: 0.5em !important;
+}
+
+.p-breadcrumb {
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+
+  font-family: var(--rcb-font-family) !important;
+  font-size: var(--rcb-font-size-16) !important;
+  color: var(--rcb-blue-primary) !important;
+  letter-spacing: 1.5% !important;
+  overflow-x: unset !important;
+}
+
+.p-breadcrumb ul li .p-menuitem-link .p-menuitem-text {
+  color: var(--rcb-blue-primary) !important;
+}
+
+.p-breadcrumb ul li:last-child .p-menuitem-text {
+  /*color: var(--rcb-blue-primary) !important;*/
+  color: var(--rcb-grey-light) !important;
+}
+
+.p-breadcrumb-chevron {
+  font-size: var(--rcb-font-size-12) !important;
+  color: var(--rcb-grey-light) !important;
+}
+.p-breadcrumb-chevron:first-child {
+  display: none;
+}
+
+.p-tabview {
+  font-family: var(--rcb-font-family) !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: var(--rcb-font-size-default) !important;
+  line-height: 21px !important;
+  letter-spacing: 0.015em !important;
+}
+
+.p-tabview-panels {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.p-tabview-nav {
+  border-bottom: 1px solid var(--rcb-blue-primary) !important;
+  border-width: 0 0 1px 0 !important;
+}
+
+.p-tabview-selected {
+  background: var(--rcb-blue-primary) !important;
+  box-shadow: 0px 2px 5px rgba(0, 119, 179, 0.58) !important;
+  border-radius: 12px 12px 0px 0px !important;
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  background: unset !important;
+  border: none !important;
+  color: #ffffff !important;
+
+  border: 1px solid var(--rcb-blue-primary) !important;
+  box-sizing: border-box !important;
+  border-radius: 12px 12px 0px 0px !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  color: var(--rcb-blue-primary);
+  font-weight: normal !important;
+  margin: 0 !important;
+
+  padding: 0.75em !important;
+
+  border: 1px solid #0077b3 !important;
+  box-sizing: border-box !important;
+  border-radius: 12px 12px 0px 0px !important;
+  border-bottom: none !important;
+}
+
+.p-tabview
+  .p-tabview-nav
+  li:not(.p-highlight):not(.p-disabled):hover
+  .p-tabview-nav-link {
+  color: var(--rcb-blue-primary);
+  font-weight: normal !important;
+  margin: 0 !important;
+
+  border: 1px solid #0077b3 !important;
+  box-sizing: border-box !important;
+  border-radius: 12px 12px 0px 0px !important;
+  border-bottom: none !important;
+}
+
+.p-datepicker table td > span {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+.p-datepicker table {
+  font-size: 0.8rem !important;
+}
+
+.p-datepicker table td {
+  padding: 0.25rem !important;
+}
+
+.p-datepicker .p-datepicker-buttonbar {
+  padding: 0 !important;
+  font-size: 12px !important;
+}
+
+.p-datepicker .p-datepicker-header {
+  padding: 0 !important;
+}
+
+.p-dialog .p-dialog-header {
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+}
+
+.p-dialog .p-dialog-content {
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+.p-dialog-header {
+  color: var(--rcb-blue-primary) !important;
+}
+
+.p-radiobutton .p-radiobutton-box {
+  border: 2px solid #303133 !important;
+}
+
+.p-radiobutton .p-radiobutton-box:not(.p-disabled).p-focus {
+  box-shadow: none !important;
+  border-color: var(--rcb-blue-primary) !important;
+  background-color: #ffffff !important;
+}
+
+.p-radiobutton .p-radiobutton-box:not(.p-disabled):not(.p-highlight):hover {
+  border-color: var(--rcb-blue-primary) !important;
+}
+
+.p-radiobutton .p-radiobutton-box.p-highlight:not(.p-disabled) {
+  border-color: var(--rcb-blue-primary) !important;
+  background-color: #ffffff !important;
+}
+
+.p-radiobutton .p-radiobutton-box.p-highlight:not(.p-disabled):hover {
+  border-color: var(--rcb-blue-primary) !important;
+}
+
+.p-radiobutton .p-radiobutton-box .p-radiobutton-icon {
+  background-color: var(--rcb-blue-primary) !important;
+}
+
+.p-toast {
+  width: 50rem !important;
+}
+
+.p-toast-bottom-center {
+  margin-left: -25em !important;
+}
+
+.p-toast-top-center {
+  margin-left: -25em !important;
+}
+
+.p-tree-container {
+  max-height: 50vh;
+}
+
+.p-progressbar {
+  height: 0.25rem !important;
+}

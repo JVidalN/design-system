@@ -1,0 +1,80 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import { useState, useEffect } from 'react';
+import { MultiSelect } from "./MultiSelect";
+import { mock } from './mock';
+
+<Meta 
+    title="Design System/Componentes/MultiSelect" 
+    component={MultiSelect} 
+    args={{
+        disabled: false,
+        placeholder:'Selecione...'
+    }}
+    argTypes={{
+        size: { 
+            options: ['sm','md','lg'],
+            control: {
+                type: 'inline-radio'
+            }
+        },
+        options: { 
+            control: 'object',
+        },
+    }}
+/>
+
+# MultiSelect
+
+> O componente `MultiSelect` é uma lista suspensa em que o usuário pode selecionar múltiplas opções de uma lista pré-definida. 
+
+## Variantes
+
+### Default
+
+<Canvas withToolbar>
+    <Story name="Default">
+        {
+            (args) => {
+                const [selectedOptions, setSelectedOptions] = useState([]);
+                useEffect(() => {
+                    action('onChange Event')(`Valor(es) selecionado(s): ${selectedOptions.map((o) => o.value).join(", ")}`);
+                }, [selectedOptions])
+                
+                return <MultiSelect 
+                            {...args}
+                            options={mock.Data}
+                            onChange={(selected) => setSelectedOptions(selected)}
+                        />
+            }
+        }
+    </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+### Agrupado
+
+<Canvas withToolbar>
+    <Story 
+        name="Group"
+    >
+        {
+            (args) => {
+                const [selectedOptions, setSelectedOptions] = useState([]);
+                useEffect(() => {
+                    action('onChange Event')(`Valor(es) selecionado(s): ${selectedOptions.map((o) => o.value).join(", ")}`);
+                }, [selectedOptions])
+                
+                return <MultiSelect 
+                            {...args}
+                            options={mock.Group}
+                            onChange={(selected) => setSelectedOptions(selected)}
+                            grouped
+                        />
+            }
+        }
+    </Story>
+</Canvas>
+
+<ArgsTable story="Group" />

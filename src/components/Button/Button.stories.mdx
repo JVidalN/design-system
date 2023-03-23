@@ -1,0 +1,84 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { action } from "@storybook/addon-actions";
+import { Button } from "./Button";
+
+<Meta 
+    title="Design System/Componentes/Button" 
+    component={Button} 
+    args={{
+        disabled: false,
+        loading: false,
+        label: 'Cadastrar simulação',
+    }}
+    argTypes={{
+        onClick: { action: 'Primary Clicado!' },
+    }}
+/>
+
+export const ButtonTemplate= (args) => <Button {...args} />;
+
+# Button
+
+> O componente `Button` é um elemento de interface gráfica que permite ao usuário iniciar uma ação ou realizar uma tarefa específica ao clicar nele.
+
+## Variantes
+
+### Default
+
+<Canvas withToolbar>
+    <Story name="Default">
+        {ButtonTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+### Secondary
+
+<Canvas withToolbar>
+    <Story 
+        name="Secondary"
+        args={{
+            variant: 'secondary',
+            onClick: action('Secondary Clicado!')
+        }}
+    >
+        {ButtonTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Secondary" />
+
+### Danger
+
+<Canvas withToolbar>
+    <Story 
+        name="Danger"
+        args={{
+            variant: 'danger',
+            label: 'Rejeitar',
+            onClick: action('Danger Clicado!')
+        }}
+    >
+        {ButtonTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Danger" />
+
+### Secondary Danger
+
+<Canvas withToolbar>
+    <Story 
+        name="Secondary Danger"
+        args={{
+            variant: 'secondary-danger',
+            label: 'Rejeitar',
+            onClick: action('Secondary Danger Clicado!')
+        }}
+    >
+        {ButtonTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Secondary Danger" />

@@ -1,0 +1,103 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import { iconNamesAsType } from '../../helpers/Icons/iconsType';
+import { Icon } from "./Icon";
+
+<Meta 
+    title="Design System/Componentes/Icon" 
+    component={Icon} 
+    decorators={[
+      (Story) => (
+        <div className="drop-shadow-md">
+          <div className="w-24 h-24 bg-neutral-light-base rounded-lg flex flex-col items-center justify-center">
+            {Story()}
+          </div>
+        </div>
+      ),
+    ]}
+    args={{
+        name: 'user',
+        color: 'text-brand-primary-dark',
+        width: '24px',
+        height: '24px',
+    }}
+    argTypes={{
+      color: {
+        table: {
+          disable: true
+        },
+      },
+      name: {
+          options: iconNamesAsType,
+      },
+      onClick: {
+          table: {
+            disable: true
+          },
+      },
+    }}
+/>
+
+export const IconTemplate = (args) => <Icon {...args} />;
+
+# Icon
+
+> O componente `Icon` é um componente que exibe uma imagem ou símbolo gráfico usado para representar uma ação, item ou conceito em uma interface gráfica do usuário (GUI).
+
+## Variantes
+
+### Default
+
+<Canvas withToolbar>
+    <Story name="Default">
+        {IconTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+### Com ação
+
+<Canvas withToolbar>
+    <Story 
+      name="Clickable"
+      args={{
+        onClick: action('Ícone clicado!')
+      }}
+    >
+        {IconTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Clickable" />
+
+### Todos
+
+<Canvas withToolbar>
+    <Story name="AllIcons">
+        {
+          (args) => {
+              const {name ,...rest} = args;
+              
+              return (
+                <div className='w-screen h-screen flex flex-row gap-2 flex-wrap py-4 px-4 items-center justify-center'>
+                  {
+                    iconNamesAsType.map( (iconName, idx) => {
+                      return (
+                        <div key={idx} className="drop-shadow-md">
+                            <div className="w-20 h-20 bg-neutral-light-base rounded-lg flex flex-col items-center justify-center">  
+                              <Icon name={iconName} {...rest} /> 
+                              <span className='text-xs text-neutral-dark-dark02'>{iconName}</span>
+                            </div>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              )
+          }
+        }
+    </Story>
+</Canvas>
+
+<ArgsTable story="AllIcons" />

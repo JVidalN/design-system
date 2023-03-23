@@ -1,0 +1,84 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import { useState, useEffect } from 'react';
+import { DropDown } from "./DropDown";
+import { mock } from './mock';
+
+<Meta 
+    title="Design System/Componentes/DropDown" 
+    component={DropDown} 
+    args={{
+        disabled: false,
+        placeholder:'Selecione...'
+    }}
+    argTypes={{
+        size: { 
+            options: ['sm','md','lg'],
+            control: {
+                type: 'inline-radio'
+            }
+        },
+        options: { 
+            control: 'object',
+        },
+    }}
+/>
+
+# DropDown
+
+> O componente `DropDown` é uma lista suspensa de opções de seleção, que é exibida quando o usuário clica em um botão ou campo de seleção. 
+
+## Variantes
+
+### Default
+
+<Canvas withToolbar>
+    <Story 
+        name="Default"
+    >
+        {
+            (args) => {
+                const [selected, setSelected] = useState('');
+                useEffect(() => {
+                    action('onChange Event')(`Valor selecionado: ${selected}`);
+                }, [selected])
+                
+                return <DropDown 
+                            {...args} 
+                            options={mock.Data}
+                            selected={selected}
+                            onChange={setSelected}
+                        />
+            }
+        }
+    </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+### Agrupado
+
+<Canvas withToolbar>
+    <Story 
+        name="Group"
+    >
+        {
+            (args) => {
+                const [selected, setSelected] = useState('');
+                useEffect(() => {
+                    action('onChange Event')(`Valor selecionado: ${selected}`);
+                }, [selected])
+                
+                return <DropDown 
+                            {...args} 
+                            options={mock.Group}
+                            selected={selected}
+                            onChange={setSelected}
+                            grouped
+                        />
+            }
+        }
+    </Story>
+</Canvas>
+
+<ArgsTable story="Group" />

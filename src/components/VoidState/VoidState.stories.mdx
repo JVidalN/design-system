@@ -1,0 +1,82 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Button } from '../Button/Button';
+import { Icon } from '../IconComponent/Icon';
+import { VoidState } from "./VoidState";
+
+<Meta 
+    title="Design System/Componentes/VoidState" 
+    component={VoidState} 
+    argTypes={{
+        children: { 
+            table: { 
+                defaultValue: { 
+                    summary: 'empty' 
+                },
+            },
+        },
+    }}
+/>
+
+export const VoidStateTemplate = ({children}) => <VoidState>{children}</VoidState>;
+
+# Estado Vazio
+
+> O componente `VoidState` representa um estado vazio, e pode ser utilizado dentro de outros elementos. <br/>
+É responsivo e o tamanho se adapta ao tamanho máximo do elemento que o encapsula.
+
+## Variantes
+
+### Default
+
+<Canvas withToolbar>
+    <Story 
+        name="Default"
+        decorators={[(Story) => <div className='w-[526px] h-[310px]'>{Story()}</div>]}
+    >
+        {VoidStateTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+### Com Texto
+
+<Canvas withToolbar>
+    <Story 
+        name="Com Texto" 
+        args={{
+            children: 'Texto estado vazio',
+        }}
+        decorators={[(Story) => <div className='w-[526px] h-[310px]'>{Story()}</div>]}
+    >
+        {VoidStateTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Com Texto" />
+
+### Customizável
+
+<Canvas withToolbar> 
+    <Story 
+        name="Com Customização" 
+        args={{
+            children: <div className='w-96 flex flex-col text-center items-center gap-4'>
+                        <Icon 
+                            name= 'social'
+                            width= '165px'
+                            height= '165px'
+                        /> 
+                        <span>
+                            Você ainda não cadastrou nenhum representante legal. Clique no botão abaixo para cadastrar:
+                        </span>
+                        <Button label='Cadastrar representante legal' />
+                    </div>,
+        }}
+        decorators={[(Story) => <div className='w-[526px] h-[310px]'>{Story()}</div>]}
+    >
+        {VoidStateTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Com Customização" />

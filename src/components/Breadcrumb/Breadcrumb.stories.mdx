@@ -1,0 +1,34 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Breadcrumb } from "./Breadcrumb";
+import { mock } from './mock';
+
+<Meta 
+    title="Design System/Componentes/Breadcrumb" 
+    component={Breadcrumb} 
+    args={{
+        items: mock.Data
+    }}
+    argTypes={{
+        items: { 
+            control: 'object',
+        },
+    }}
+/>
+
+export const BreadcrumbTemplate = (args) => <Breadcrumb {...args} />;
+
+# Breadcrumb
+
+> O componente `Breadcrumb` é um elemento de navegação que exibe a hierarquia da localização de um usuário em um site ou aplicativo.
+
+## Variantes
+
+### Default
+
+<Canvas withToolbar>
+    <Story name="Default">
+        {BreadcrumbTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
