@@ -1,34 +1,32 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import dts from 'vite-plugin-dts';
-import { dependencies } from './package.json';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
 export default (defineConfig as any)({
   plugins: [
     react(),
     dts({
-        insertTypesEntry: true,
+      insertTypesEntry: true,
     }),
   ],
   build: {
     outDir: "dist",
     lib: {
-      entry: 'src/index.ts',
-      name: 'design-system',
-      formats: ['es', 'cjs'],
+      entry: "src/index.ts",
+      name: "design-system",
+      formats: ["es", "cjs"],
       fileName: (ext) => `design-system.${ext}.js`,
     },
     rollupOptions: {
-      external: [...Object.keys(dependencies)],
+      external: ["react", "react-dom"],
       output: {
         globals: {
-          react: 'react',
-          'react-dom': 'ReactDOM',
+          react: "react",
+          "react-dom": "ReactDOM",
         },
       },
     },
-    target: 'esnext',
-    sourcemap: true
+    target: "es6",
   },
-})
+});
