@@ -49,7 +49,6 @@
     "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
     "postcss": "^8.4.21",
-    "postcss-import": "^15.1.0",
     "primeflex": "^2.0.0",
     "primeicons": "^5.0.0",
     "primereact": "^8.3.0",
