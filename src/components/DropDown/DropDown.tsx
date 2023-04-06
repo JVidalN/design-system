@@ -32,10 +32,8 @@ function DropDown({
   }: DropDownProps
 ) {
   const selectRef = useRef<HTMLSelectElement>(null);
-  const [,setValue] = useState<string>(selectedValue);
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setValue(event.target.value);
     onChange(event.target.value);
   };
 
