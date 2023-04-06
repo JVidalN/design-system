@@ -1,4 +1,5 @@
 {
+  "homepage": "http://jvidaln.github.io/design-system",
   "name": "@jvidaln/design-system",
   "private": false,
   "version": "1.0.5",
@@ -23,6 +24,8 @@
     "build": "tsc && vite build && npx tailwindcss -o dist/styles.css --minify",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
+    "predeploy-storybook": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
@@ -48,6 +51,7 @@
     "@vitejs/plugin-react": "^3.0.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.21",
     "primeflex": "^2.0.0",
     "primeicons": "^5.0.0",
