@@ -25,7 +25,11 @@ const ButtonToggleTemplate: ComponentStory<typeof ButtonToggle.Root> = ({childre
     }, [activeChild]);
 
     return (
-        <ButtonToggle.Root {...args} onChange={(activatedSide: any) => setActiveChild(activatedSide)}>
+        <ButtonToggle.Root 
+            {...args} 
+            onChange={(activatedSide: any) => setActiveChild(activatedSide)}
+            activeChild={activeChild}
+        >
             {children}
         </ButtonToggle.Root>
     );

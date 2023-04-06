@@ -2,21 +2,18 @@ import React, { ReactNode, Children, useState } from "react";
 
 export interface ButtonToggleRootProps {
     children: ReactNode;
+    activeChild: 'left' | 'right';
     onChange: (selectedValue: any)=> void;
 }
 
  /** Um botão é um controle que permite ao usuário se comunicar diretamente com o produto digital e enviar os comandos necessários para atingir um objetivo específico. */ 
-function ButtonToggleRoot({ children, onChange }: ButtonToggleRootProps) {
-
-    const [activeChild, setActiveChild] = useState<'left' | 'right'>('left');
+function ButtonToggleRoot({ children, onChange, activeChild }: ButtonToggleRootProps) {
 
     const handleLeftClick = () => {
-        setActiveChild('left');
         onChange('left');
     };
 
     const handleRightClick = () => {
-        setActiveChild('right');
         onChange('right');
     };
 
