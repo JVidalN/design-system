@@ -30,16 +30,17 @@ export default {
 
 export const Default: ComponentStory<typeof InputSwitch> = (args) => {
     
-  const [value, setValue] = useState(false)
+  const [checked, setChecked] = useState(false)
 
   useEffect(() => {
-      action('Switch Event')(`Valor atual: ${value}`)
-  }, [value])
+      action('Switch Event')(`Valor atual: ${checked}`)
+  }, [checked])
 
   return (
     <InputSwitch 
       {...args}
-      onChange={setValue}
+      onChange={setChecked}
+      checked={checked}
     />
   )
 };
