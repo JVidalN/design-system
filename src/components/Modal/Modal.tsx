@@ -21,20 +21,15 @@ function Modal({
   width = '448px',
   height = '300px',
 }: ModalProps) {
-  const [isModalOpen, setIsModalOpen] = useState(isOpen);
 
-  useEffect(() => {
-    setIsModalOpen(isOpen);
-  }, [isOpen]);
 
   const handleModalClose = () => {
-    setIsModalOpen(false);
     onClose();
   };
 
   return (
     <>
-      {isModalOpen && (
+      {isOpen && (
         <div 
           className="
             fixed 
