@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Icon } from '../IconComponent/Icon';
 import { Tab, TabSet } from "./TabSet";
+import { useState } from 'react';
 
 export default {
     title: 'Design System/Componentes/TabSet',
@@ -17,9 +18,15 @@ export default {
 } as ComponentMeta<typeof TabSet>;
 
 export const Default: ComponentStory<typeof TabSet> = (args) => {
+    
+    const [activeTabIndex, setActiveTabIndex] = useState(0);
 
     return (
-            <TabSet {...args}>
+            <TabSet 
+                {...args}
+                onChange={(index: number) => setActiveTabIndex(index)}
+                activeTabIndex={activeTabIndex}
+            >
                 <Tab label="Tab 1">
                     <p>Qualquer conteúdo da Tab 1.</p>
                 </Tab>
@@ -50,9 +57,15 @@ export const WithIcon: ComponentStory<typeof TabSet> = (args) => {
             </>
         )
     }
+    
+    const [activeTabIndex, setActiveTabIndex] = useState(0);
 
     return (
-        <TabSet {...args}>
+        <TabSet 
+            {...args}
+            onChange={(index: number) => setActiveTabIndex(index)}
+            activeTabIndex={activeTabIndex}
+        >
             <Tab label={tabOne()}>
                 <p>Content for Tab 1 goes here.</p>
             </Tab>

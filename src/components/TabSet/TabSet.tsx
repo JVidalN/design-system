@@ -9,13 +9,14 @@ interface Tab {
 
 interface TabSetProps {
   children: React.ReactElement<Tab>[];
+  activeTabIndex: number;
+  onChange: (index: any)=> void;
 }
 
-function TabSet({ children }:TabSetProps){
-  const [activeTabIndex, setActiveTabIndex] = useState(0);
+function TabSet({ children, activeTabIndex, onChange }:TabSetProps){
 
   const onTabClick = (index: number) => {
-    setActiveTabIndex(index);
+    onChange(index);
   };
 
   const activeTab = children[activeTabIndex];
