@@ -2,7 +2,7 @@
   "homepage": "http://jvidaln.github.io/design-system",
   "name": "@jvidaln/design-system",
   "private": false,
-  "version": "1.0.7",
+  "version": "1.0.8",
   "files": [
     "dist"
   ],
