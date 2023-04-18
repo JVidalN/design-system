@@ -13,6 +13,7 @@ interface OptionGroupProps {
 export interface MultiSelectProps {
   options: OptionProps[] | OptionGroupProps[];
   placeholder: string;
+  selectedOptions: OptionProps[];
   onChange: (selectedOptions: OptionProps[]) => void;
   size?: 'sm' | 'md' | 'lg';
   disabled?: boolean;
@@ -25,10 +26,10 @@ function MultiSelect({
     disabled = false, 
     size = 'md', 
     onChange, 
+    selectedOptions,
     grouped=false 
   }: MultiSelectProps
 ) {
-  const [selectedOptions, setSelectedOptions] = useState<OptionProps[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -44,8 +45,6 @@ function MultiSelect({
     } else {
       newSelectedOptions.push(option);
     }
-    
-    setSelectedOptions(newSelectedOptions);
     onChange(newSelectedOptions);
 
   };

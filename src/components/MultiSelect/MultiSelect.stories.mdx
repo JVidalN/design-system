@@ -44,6 +44,7 @@ import { mock } from './mock';
                 return <MultiSelect 
                             {...args}
                             options={mock.Data}
+                            selectedOptions={selectedOptions}
                             onChange={(selected) => setSelectedOptions(selected)}
                         />
             }
@@ -64,11 +65,12 @@ import { mock } from './mock';
                 const [selectedOptions, setSelectedOptions] = useState([]);
                 useEffect(() => {
                     action('onChange Event')(`Valor(es) selecionado(s): ${selectedOptions.map((o) => o.value).join(", ")}`);
-                }, [selectedOptions])
+                }, [selectedOptions]);
                 
                 return <MultiSelect 
                             {...args}
                             options={mock.Group}
+                            selectedOptions={selectedOptions}
                             onChange={(selected) => setSelectedOptions(selected)}
                             grouped
                         />
