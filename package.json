@@ -19,6 +19,7 @@
     "registry": "https://npm.pkg.github.com/@jvidaln"
   },
   "scripts": {
+    "push": "npm version patch && git push",
     "dev": "vite",
     "test": "exit 0",
     "build": "tsc && vite build && npx tailwindcss -o dist/styles.css --minify",

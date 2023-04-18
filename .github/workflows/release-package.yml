@@ -31,6 +31,8 @@ jobs:
           scope: '@jvidaln'
       - run: npm ci      
       - run: npm run build-storybook
+      - run: git config --global user.email "j.vidalnunes@gmail.com"
+      - run:  git config --global user.name "Jean Vidal"
       - run: npm run deploy-storybook
       - run: npm publish
         env:
