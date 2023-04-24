@@ -2,7 +2,7 @@
   "homepage": "http://jvidaln.github.io/design-system",
   "name": "@jvidaln/design-system",
   "private": false,
-  "version": "1.0.16",
+  "version": "1.0.17",
   "files": [
     "dist"
   ],
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "push": "npm version patch && git push",
-    "version-and-publish": "npm run build && npm version patch --no-git-tag-version && npm publish --registry=https://npm.pkg.github.com/ && git add . && git commit -m 'new version' && git push",
+    "version-and-publish": "npm run build && npm version patch --no-git-tag-version && git add . && git commit -m 'new version' && git push",
     "dev": "vite",
     "test": "exit 0",
     "build": "tsc && vite build && npx tailwindcss -o dist/styles.css --minify",
