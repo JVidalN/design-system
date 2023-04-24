@@ -2,7 +2,7 @@
   "homepage": "http://jvidaln.github.io/design-system",
   "name": "@jvidaln/design-system",
   "private": false,
-  "version": "1.0.13",
+  "version": "1.0.14",
   "files": [
     "dist"
   ],
@@ -10,19 +10,17 @@
   "module": "dist/design-system.esm.js",
   "typings": "dist/index.d.ts",
   "peerDependencies": {
-    "react": ">=17.0.2",
-    "react-dom": ">=17.0.2"
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
   },
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jvidaln/design-system.git"
-  },
+  "repository": "git:https://github.com/JVidalN/design-system.git",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "push": "npm version patch && git push",
+    "version-and-publish": "npm run build && npm version patch --no-git-tag-version && npm publish --registry=https://npm.pkg.github.com/ && git add . && git commit -m 'new version' && git push",
     "dev": "vite",
     "test": "exit 0",
     "build": "tsc && vite build && npx tailwindcss -o dist/styles.css --minify",
