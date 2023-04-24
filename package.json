@@ -2,7 +2,7 @@
   "homepage": "http://jvidaln.github.io/design-system",
   "name": "@jvidaln/design-system",
   "private": false,
-  "version": "1.0.10",
+  "version": "1.0.11",
   "files": [
     "dist"
   ],
@@ -14,9 +14,12 @@
     "react-dom": ">=17.0.2"
   },
   "type": "module",
-  "repository": "github:JVidalN/design-system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jvidaln/design-system.git"
+  },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@jvidaln"
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "push": "npm version patch && git push",
