@@ -1,21 +1,14 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react-swc";
 import dts from "vite-plugin-dts";
+import path from "path";
 
 // https://vitejs.dev/config/
 export default (defineConfig as any)({
-  plugins: [
-    react(),
-    dts({
-      insertTypesEntry: true,
-    }),
-  ],
   build: {
-    outDir: "dist",
     lib: {
-      entry: "src/index.ts",
+      entry: path.resolve(__dirname, "src/index.ts"),
       name: "design-system",
-      formats: ["es", "cjs"],
       fileName: (ext) => `design-system.${ext}.js`,
     },
     rollupOptions: {
@@ -27,6 +20,8 @@ export default (defineConfig as any)({
         },
       },
     },
-    target: "es6",
+    sourcemap: true,
+    emptyOutDir: true,
   },
+  plugins: [react(), dts()],
 });
