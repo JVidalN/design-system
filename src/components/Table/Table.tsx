@@ -88,39 +88,67 @@ function TableRoot({
         handleSorting(field, sortOrder);
     };
 
-    const isValidTypeToHead = (type: any) => (type !== TableSearch && type !== TableRegister)
-
     const creatingTableHead = (child: any, idx: number) => {
-
-        if(isValidTypeToHead(child.type)){
-            return (
-                <th 
-                key={`th${idx}`}
-                    className={`
-                    bg-neutral-light-light01 
-                    ${child?.props.sortable?"text-brand-primary-dark cursor-pointer":"text-neutral-dark-base"}
-                    border 
-                    border-neutral-light-light03 
-                    text-left p-[15px]
-                    h-[55px]
-                    text-sm
-                    `}
-                    onClick={child?.props.sortable?() => handleSortingChange(child?.props.field):undefined}
-                >
-                    <div className="flex gap-2 items-center">
-                        {child?.props.header}
-                        {
-                            child?.props.sortable && (
-                                <Icon 
-                                    name= 'sort'
-                                    width= '24px'
-                                    height= '24px'
-                                /> 
-                            )
-                        }
-                    </div>
-                </th>
-            )
+        switch (child.type) {
+            case TableAction:
+                return (
+                    <th 
+                    key={`th${idx}`}
+                        className={`
+                        bg-neutral-light-light01 
+                        ${child?.props.sortable?"text-brand-primary-dark cursor-pointer":"text-neutral-dark-base"}
+                        border 
+                        border-neutral-light-light03 
+                        text-left p-[15px]
+                        h-[55px]
+                        text-sm
+                        max-w-[100px]
+                        `}
+                        onClick={child?.props.sortable?() => handleSortingChange(child?.props.field):undefined}
+                    >
+                        <div className="flex gap-2 items-center">
+                            {child?.props.header}
+                            {
+                                child?.props.sortable && (
+                                    <Icon 
+                                        name= 'sort'
+                                        width= '24px'
+                                        height= '24px'
+                                    /> 
+                                )
+                            }
+                        </div>
+                    </th>
+                    )
+            case TableColumn:
+                return (
+                    <th 
+                    key={`th${idx}`}
+                        className={`
+                        bg-neutral-light-light01 
+                        ${child?.props.sortable?"text-brand-primary-dark cursor-pointer":"text-neutral-dark-base"}
+                        border 
+                        border-neutral-light-light03 
+                        text-left p-[15px]
+                        h-[55px]
+                        text-sm
+                        `}
+                        onClick={child?.props.sortable?() => handleSortingChange(child?.props.field):undefined}
+                    >
+                        <div className="flex gap-2 items-center">
+                            {child?.props.header}
+                            {
+                                child?.props.sortable && (
+                                    <Icon 
+                                        name= 'sort'
+                                        width= '24px'
+                                        height= '24px'
+                                    /> 
+                                )
+                            }
+                        </div>
+                    </th>
+                    )
         }
     }
 
