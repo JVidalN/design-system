@@ -54,7 +54,7 @@ function TableRoot({
     }, [values])
 
     useEffect(() => {
-        let filteredValues = tableData.filter(item => {
+        let filteredValues = tableData.filter((item:any) => {
             return Object.values(item).some((value: any) => value.toString().toLowerCase().includes(search.toLowerCase()));
         });
         setFilteredTableData(filteredValues);
