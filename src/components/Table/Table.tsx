@@ -102,7 +102,7 @@ function TableRoot({
                         text-left p-[15px]
                         h-[55px]
                         text-sm
-                        max-w-[100px]
+                        max-w-fit
                         `}
                         onClick={child?.props.sortable?() => handleSortingChange(child?.props.field):undefined}
                     >
