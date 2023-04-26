@@ -1,9 +1,11 @@
+import { action } from '@storybook/addon-actions';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { useState } from "react";
 import { Button } from '../Button/Button';
 import { Icon } from '../IconComponent/Icon';
 import { InputText } from '../InputText/InputText';
-import { mock } from './mock';
 import { Table } from './Table';
+import { mock } from './mock';
 
 export default {
     title: 'Design System/Componentes/Table',
@@ -262,3 +264,41 @@ WithChip.args = {
 }
 WithChip.storyName = 'Com Chips';
 
+export const WithAsyncronousValues: ComponentStory<typeof Table.Root> = (args) => {
+
+    const [data, setData] = useState<any>([]);
+    
+    function simulateAsyncCall() {
+        return new Promise(resolve => {
+          setTimeout(() => {
+            resolve(mock.Data);
+          }, 2 * 1000);
+        });
+    }
+    
+    const pesquisar = async () => {
+        console.log('Pesquisar acionado');
+        try {
+            const response = await simulateAsyncCall();
+            if(response){
+                console.log('Pesquisar data',response);
+                setData(response);
+            }
+        } catch (error) {
+            console.log('Erro ao pesquisar:' + JSON.stringify(error));
+        }
+    }
+    
+    return (
+        <>
+            <Button onClick={pesquisar} label='Pesquisar' />
+            <Table.Root maxHeight='500px' values={data}>
+                <Table.Column header='Nome' field='name' maxWidth='120px' dataType='string' sortable/>
+                <Table.Column dataType="string" field="age" header="Idade" maxWidth="120px" sortable/>
+                <Table.Column dataType="string" field="name" header="Nome" maxWidth="120px" sortable/>
+                <Table.Column dataType="string" field="gender" header="Gênero" maxWidth="120px" sortable/>
+            </Table.Root>
+        </>
+    )
+};
+WithAsyncronousValues.storyName = 'Com Dados Assíncronos';

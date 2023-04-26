@@ -37,8 +37,9 @@ function TableRoot({
             return acc;
         }, {});
     };
+    
 
-    const tableData = values.map(treatingValues);
+    let tableData:any = [];
     const [filteredTableData, setFilteredTableData] = useState(tableData);
     const [search, setSearch] = useState('');
     const [sortField, setSortField] = useState('');
@@ -46,6 +47,11 @@ function TableRoot({
     const [columnChipExpanded, setColumnChipExpanded] = useState(false);
 
     const handleColumnChipExpanded = () => setColumnChipExpanded(prevState => !prevState);
+
+    useEffect(() => {
+        tableData = values.map(treatingValues);
+        setFilteredTableData(tableData);
+    }, [values])
 
     useEffect(() => {
         let filteredValues = tableData.filter(item => {
