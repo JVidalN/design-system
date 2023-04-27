@@ -34,7 +34,7 @@
     "build": "tsc && vite build && npx tailwindcss -o dist/styles.css --minify",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
-    "predeploy-storybook": "npm run build-storybook",
+    "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
     "build-storybook": "build-storybook",
     "prepare": "npm run build"
