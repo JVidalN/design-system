@@ -98,7 +98,7 @@ function Toast({ position, severity, summary, closable = false }: ToastProps) {
     }
   };
 
-  const severityAssets = {
+  const severityAssets: any = {
     [severity]: {
       icon: `check${capitalizeWords(severity)}`,
     },
