@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - master
-    paths: ["src/components/**"]
+    # paths: ["src/components/**"]
 
 name: Publish stories if changed
 
