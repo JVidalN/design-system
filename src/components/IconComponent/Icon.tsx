@@ -18,7 +18,7 @@ function Icon({ id, name, color='black', width='24', height='24', onClick, class
         <ReactSVG
             id={id}
             src={iconSvg}
-            className={`${color} cursor-pointer ${className&&className}`}
+            className={`${color} ${!!onClick && 'cursor-pointer'} ${className&&className}`}
             wrapper="svg"
             width={width}
             height={height}
