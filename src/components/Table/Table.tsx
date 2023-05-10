@@ -38,6 +38,7 @@ function TableRoot({
         }, {});
     };
     
+    const isVisibleColumn = (visibleProp: boolean) => visibleProp == undefined?true:visibleProp;
 
     let tableData:any = [];
     const [filteredTableData, setFilteredTableData] = useState(tableData);
@@ -122,6 +123,7 @@ function TableRoot({
                     )
             case TableColumn:
                 return (
+                    isVisibleColumn(child?.props.visible) &&
                     <th 
                     key={`th${idx}`}
                         className={`
@@ -153,6 +155,7 @@ function TableRoot({
     }
 
     const returnCellElementByType = (child: any, item: any, iTd: number):ReactNode => {
+        console.log(isVisibleColumn(child?.props))
         switch (child.type) {
             case TableAction:
                 return (
@@ -172,6 +175,7 @@ function TableRoot({
                     )
             case TableColumn:
                 return (
+                        isVisibleColumn(child?.props.visible) &&
                         <td 
                             key={`tdColumn${iTd}`}
                             className={`
@@ -409,9 +413,10 @@ export interface ColumnProps {
     dataType: string,
     chipped?: boolean,
     format?: string,
+    visible?: boolean,
 }
 
-function TableColumn( props : ColumnProps) {
+function TableColumn( {visible = true, ...props} : ColumnProps) {
     return null;
 }
 

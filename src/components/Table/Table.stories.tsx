@@ -302,3 +302,16 @@ export const WithAsyncronousValues: ComponentStory<typeof Table.Root> = (args) =
     )
 };
 WithAsyncronousValues.storyName = 'Com Dados Assíncronos';
+
+export const WithHideValues: ComponentStory<typeof Table.Root> = (args) => (
+    <Table.Root key='WithSort' {...args}>
+        <Table.Column dataType="string" field="index" header="ID" maxWidth="10px" visible={false}/>
+        <Table.Column dataType="string" field="balance" header="Balanço" maxWidth="120px"/>
+        <Table.Column dataType="string" field="age" header="Idade" maxWidth="120px"/>
+        <Table.Column dataType="string" field="name" header="Nome" maxWidth="120px"/>
+        <Table.Column dataType="string" field="gender" header="Gênero" maxWidth="120px"/>
+        <Table.Column dataType="string" field="company" header="Companhia" maxWidth="220px" sortable/>
+        <Table.Column dataType="string" field="email" header="Email" maxWidth="120px"/>
+    </Table.Root>
+);
+WithHideValues.storyName = 'Com Campo Oculto';
