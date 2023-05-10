@@ -1,0 +1,52 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Toast } from './Toast';
+
+<Meta 
+    title='Design System/Componentes/Toast' 
+    component={Toast} 
+    args={{
+        position:'center',
+        severity:'success',
+        summary:'Success'
+    }}
+    decorators={[
+      (Story) => (
+        <div className=''>
+            {Story()}
+        </div>
+      ),
+    ]}
+/>
+
+export const ToastTemplate = (args) => <Toast {...args} />;
+
+# Toast
+
+> O componente `Toast` é uma pequena mensagem ou notificação pop-up que aparece na tela provendo feedbacks ao usuário. <br/>
+É tipicamente usado para rápidos e discretos feedcbaks.
+
+## Variantes
+
+### Default
+
+<Canvas withToolbar>
+    <Story 
+        name='Default'
+    >
+        {ToastTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story='Default' />
+
+### Único
+
+<Canvas withToolbar>
+    <Story 
+        name='Único'
+    >
+        {ToastTemplate.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story='Único' />
